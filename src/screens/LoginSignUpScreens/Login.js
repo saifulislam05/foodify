@@ -10,7 +10,7 @@ import {
 } from "@expo/vector-icons";
 
 
-const Login = () => {
+const Login = ({navigation}) => {
     const [emailFocus,setEmailFocus]=useState(false)
     const [passwordFocus,setPasswordFocus]=useState(false)
     const [showPassword,setShowPassword]=useState(false)
@@ -18,54 +18,74 @@ const Login = () => {
     <View style={styles.container}>
       <Text style={styles.head1}>Log In</Text>
       <View style={styles.inputOuter}>
-        <AntDesign name="user" size={24} color={emailFocus == true? colors.text1: colors.text2} />
+        <AntDesign
+          name="user"
+          size={24}
+          color={emailFocus == true ? colors.text1 : colors.text2}
+        />
         <TextInput
           style={styles.input}
           placeholder="Email"
           onFocus={() => {
             setEmailFocus(true);
-              setPasswordFocus(false);
-              setShowPassword(false)
+            setPasswordFocus(false);
+            setShowPassword(false);
           }}
         />
       </View>
       <View style={styles.inputOuter}>
-        <MaterialCommunityIcons name="lock-outline" size={24} color={passwordFocus == true? colors.text1:colors.text2} />
-              <TextInput style={styles.input} placeholder="Password"
-                  onFocus={() => {
-                     setEmailFocus(false)
-                      setPasswordFocus(true)
-                  }}
-              secureTextEntry={showPassword==false?true:false}
-              />
-              <Octicons name={showPassword == false ? 'eye-closed' : 'eye'}
-              size={24} color='black' onPress={()=>setShowPassword(!showPassword)}/>
-          </View>
-          
-          <TouchableOpacity style={btn1}>
-              <Text style={styles.btnText}>Log In</Text>
-          </TouchableOpacity>
+        <MaterialCommunityIcons
+          name="lock-outline"
+          size={24}
+          color={passwordFocus == true ? colors.text1 : colors.text2}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          onFocus={() => {
+            setEmailFocus(false);
+            setPasswordFocus(true);
+          }}
+          secureTextEntry={showPassword == false ? true : false}
+        />
+        <Octicons
+          name={showPassword == false ? "eye-closed" : "eye"}
+          size={24}
+          color="black"
+          onPress={() => setShowPassword(!showPassword)}
+        />
+      </View>
 
-          <Text style={styles.forgot}>Forget Password</Text>
-          <Text style={styles.or}>Or</Text>
-          <Text style={styles.withGoogle}>Sign In With</Text>
-          <View style={styles.gf}>
-              <TouchableOpacity>
-                  <View style={styles.gfIcon}>
-                      <AntDesign name='google' size={24} color="#EA4335"/>
-                  </View>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                  <View style={styles.gfIcon}>
-                      <FontAwesome5 name='facebook-f' size={24} color="#4267B2"/>
-                  </View>
-              </TouchableOpacity>
-              
+      <TouchableOpacity style={btn1} onPress={()=>navigation.navigate('HomeScreen')}>
+        <Text style={styles.btnText}>Log In</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.forgot}>Forget Password</Text>
+      <Text style={styles.or}>Or</Text>
+      <Text style={styles.withGoogle}>Sign In With</Text>
+      <View style={styles.gf}>
+        <TouchableOpacity>
+          <View style={styles.gfIcon}>
+            <AntDesign name="google" size={24} color="#EA4335" />
           </View>
-          <View style={hr80}></View>
-          <Text>Don't have an Account? 
-          <Text style={styles.signUp}> sign Up</Text>
-          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={styles.gfIcon}>
+            <FontAwesome5 name="facebook-f" size={24} color="#4267B2" />
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={hr80}></View>
+      <Text>
+        Don't have an Account?
+        <Text
+          style={styles.signUp}
+          onPress={() => navigation.navigate("SignUp")}
+        >
+          {" "}
+          sign Up
+        </Text>
+      </Text>
     </View>
   );
 }

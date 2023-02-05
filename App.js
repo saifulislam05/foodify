@@ -2,13 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Login from './src/screens/LoginSignUpScreens/Login';
 import Welcome from './src/screens/LoginSignUpScreens/Welcome';
+import RootNavigation from './src/RootNavigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Welcome/> */}
-      <Login/>
-    </View>
+    <RootNavigation/>
+    // <View style={styles.container}>
+    //   {/* <Welcome/> */}
+    //   <Login/>
+    // </View>
   );
 }
 

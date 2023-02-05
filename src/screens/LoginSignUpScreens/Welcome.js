@@ -4,27 +4,36 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import logo from '../../../assets/burger.png'
 import {colors,hr80} from '../../globals/style'
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
-      <View style={styles.container}>
-      <Text style={styles.title} >Welcome to Foodfy</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Welcome to Foodify</Text>
       <View style={styles.logoWrapper}>
-          <Image style={styles.logo} source={logo} />
+        <Image style={styles.logo} source={logo} />
       </View>
       <View style={hr80} />
-      <Text style={styles.text}>Get food in your door step at lowest price</Text>
-      <View style={hr80}/>
-          <View style={styles.btnWrapper}>
-              <TouchableOpacity style={styles.Btn}>
-                  <Text style={styles.btnText}>Sign Up</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.Btn}>
-                  <Text style={styles.btnText}>Log in</Text>
-              </TouchableOpacity>
-              
-          </View>
+      <Text style={styles.text}>
+        Get food in your door step at lowest price
+      </Text>
+      <View style={hr80} />
+      <View style={styles.btnWrapper}>
+        {/* -----------signUp Button---------  */}
+        <TouchableOpacity
+          style={styles.Btn}
+          onPress={() => navigation.navigate("SignUp")}
+        >
+          <Text style={styles.btnText}>Sign Up</Text>
+        </TouchableOpacity>
+        {/* -------Log in Button------- */}
+        <TouchableOpacity
+          style={styles.Btn}
+          onPress={() => navigation.navigate("Login")}
+        >
+          <Text style={styles.btnText}>Log in</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  )
+  );
 }
 const styles = StyleSheet.create({
   container: {

@@ -3,13 +3,14 @@ module.exports = {
     col1: "white",
     text1: "red",
     text2: "grey",
+    text3:'black',
   },
   titles: {
     title1: 30,
     btnText: 20,
   },
   btn1: {
-    width: "80%",
+    width: "85%",
     height: 50,
     backgroundColor: "red",
     borderRadius: 10,
