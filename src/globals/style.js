@@ -4,11 +4,11 @@ module.exports = {
     text1: "red",
     text2: "grey",
   },
-  title: {
+  titles: {
     title1: 30,
-    title2: 20,
+    btnText: 20,
   },
-  btn: {
+  btn1: {
     width: "80%",
     height: 50,
     backgroundColor: "red",
@@ -19,7 +19,7 @@ module.exports = {
     elevation: 10,
   },
   hr80: {
-    borderBottomColor: "white",
+    borderBottomColor: "#ddd",
     borderBottomWidth: 2,
     width: "80%",
     marginVertical: 20,
