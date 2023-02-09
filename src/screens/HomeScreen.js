@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.col1,
         alignItems: 'center',
         width:'100%',
+        // width:'100%',
         
     },
     SearchWrapper: {
